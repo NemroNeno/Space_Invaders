@@ -1,0 +1,10 @@
+﻿  Background.cpp
+C:\Project Space invaders final build\_build\Background.cpp(6,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Project Space invaders final build\_build\Background.cpp(7,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Project Space invaders final build\_build\Background.cpp(31,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Project Space invaders final build\_build\Background.cpp(31,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Project Space invaders final build\_build\Background.cpp(50,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Project Space invaders final build\_build\Background.cpp(56,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Project Space invaders final build\_build\Background.cpp(77,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Project Space invaders final build\_build\Background.cpp(83,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  BraveDave.vcxproj -> C:\Project Space invaders final build\_bin\Debug\BraveDave.exe

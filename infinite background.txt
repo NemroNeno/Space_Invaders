@@ -1,0 +1,72 @@
+const int screenWidth = 1080;
+const int screenHeight = 1500;
+Color backgroundColor = { 0, 0, 0, 255 }; // black color
+
+struct Star {
+    Vector2 pos;
+    Color color;
+};
+
+Star generateStar() {
+    Star star;
+    star.pos.x = GetRandomValue(0, screenWidth);
+    star.pos.y = GetRandomValue(0, screenHeight);
+    star.color.r = GetRandomValue(250, 255);
+    star.color.g = GetRandomValue(250, 255);
+    star.color.b = GetRandomValue(250, 255);
+    star.color.a = GetRandomValue(250, 255);
+    return star;
+}
+
+
+const int numStars = 110;
+Star stars[numStars];
+
+int main() {
+    InitWindow(screenWidth, screenHeight, "Adaptive Space Background");
+    SetTargetFPS(100);
+
+    for (int i = 0; i < numStars; i++) {
+        stars[i] = generateStar();
+    }
+
+    while (!WindowShouldClose()) {
+        BeginDrawing();
+        ClearBackground(backgroundColor);
+
+        // Update the stars
+        for (int i = 0; i < numStars; i++) {
+            // Move the star
+            stars[i].pos.x += 0.1;
+                stars[i].pos.y += 1.5;
+
+            // Wrap the star around the screen if it goes offscreen
+            if (stars[i].pos.x < 0) {
+                stars[i].pos.x = screenWidth;
+            }
+            else if (stars[i].pos.x > screenWidth) {
+                stars[i].pos.x = 0;
+            }
+            if (stars[i].pos.y < 0) {
+                stars[i].pos.y = screenHeight;
+            }
+            else if (stars[i].pos.y > screenHeight) {
+                stars[i].pos.y = 0;
+            }
+
+            // Make the star twinkle
+            if (GetRandomValue(0, 100) < 20) {
+                stars[i].color.a = GetRandomValue(10, 250);
+            }
+        }
+
+        // Draw the stars
+        for (int i = 0; i < numStars; i++) {
+            DrawRectangle(stars[i].pos.x, stars[i].pos.y,2,2, stars[i].color);
+        }
+
+    EndDrawing();
+    }
+    CloseWindow();
+    return 0;
+}
